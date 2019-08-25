@@ -167,4 +167,8 @@ class SuratModel extends CI_Model
 		$this->db->where('detail_ppak_id', $id);
 		return $this->db->get('dbsurat_ppak_detail')->result_array();
 	}
+	public function view_laporan($table,$column,$date1,$date2){
+		$query = "select * from $table where $column between '$date1' and '$date2'";
+		return $this->db->query($query)->result_array();
+	}
 }

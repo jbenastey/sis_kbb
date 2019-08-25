@@ -145,22 +145,22 @@
 						?>
 						<li class="nav-item d-none d-lg-block">
 							<a class="nav-link" data-toggle="collapse" href="#sidebar-layouts" aria-expanded="false" aria-controls="sidebar-layouts">
-								<i class="fa fa-envelope-o menu-icon"></i>
-								<span class="menu-title">Surat</span>
+								<i class="fa fa-file-pdf-o menu-icon"></i>
+								<span class="menu-title">Arsip Surat</span>
 								<!--								<span class="badge badge-warning"></span>-->
 							</a>
 							<div class="collapse" id="sidebar-layouts">
 								<ul class="nav flex-column sub-menu">
-									<li class="nav-item"> <a class="nav-link" data-toggle="tooltip" data-placement="right" title="Surat Keterangan Catatan Berkelakuan Baik" href="<?=base_url('skck')?>">SKCK</a></li>
-									<li class="nav-item"> <a class="nav-link" data-toggle="tooltip" data-placement="right" title="Surat Keterangan KTP Sementara" href="<?=base_url('ktps')?>">KTPS</a></li>
-									<li class="nav-item"> <a class="nav-link" data-toggle="tooltip" data-placement="right" title="Surat Keterangan Permohonan Pindah Antar Kabupaten " href="<?=base_url('ppak')?>">PPAK</a></li>
-									<li class="nav-item"> <a class="nav-link" data-toggle="tooltip" data-placement="right" title="Surat Keterangan Berdomisili" href="<?=base_url('skb')?>">SKB</a></li>
-									<li class="nav-item"> <a class="nav-link" data-toggle="tooltip" data-placement="right" title="Surat Keterangan Kehilangan" href="<?=base_url('skh')?>">SKH</a></li>
-									<li class="nav-item"> <a class="nav-link" data-toggle="tooltip" data-placement="right" title="Surat Keterangan Kebenaran Nama" href="<?=base_url('skkn')?>">SKKN</a></li>
-									<li class="nav-item"> <a class="nav-link" data-toggle="tooltip" data-placement="right" title="Surat Keterangan Pindah Nikah" href="<?=base_url('skpn')?>">SKPN</a></li>
-									<li class="nav-item"> <a class="nav-link" data-toggle="tooltip" data-placement="right" title="Surat Keterangan Tanda Kependudukan" href="<?=base_url('sktk')?>">SKTK</a></li>
-									<li class="nav-item"> <a class="nav-link" data-toggle="tooltip" data-placement="right" title="Surat Keterangan Usaha" href="<?=base_url('sku')?>">SKU</a></li>
-									<li class="nav-item"> <a class="nav-link" data-toggle="tooltip" data-placement="right" title="Surat Pernyataan Belum Pernah Nikah" href="<?=base_url('spbpn')?>">SPBPN</a></li>
+									<li class="nav-item"> <a class="nav-link" data-toggle="tooltip" data-placement="right" title="Surat Keterangan Catatan Berkelakuan Baik" href="<?=base_url('laporan/skck')?>">SKCK</a></li>
+									<li class="nav-item"> <a class="nav-link" data-toggle="tooltip" data-placement="right" title="Surat Keterangan KTP Sementara" href="<?=base_url('laporan/ktps')?>">KTPS</a></li>
+									<li class="nav-item"> <a class="nav-link" data-toggle="tooltip" data-placement="right" title="Surat Keterangan Permohonan Pindah Antar Kabupaten " href="<?=base_url('laporan/ppak')?>">PPAK</a></li>
+									<li class="nav-item"> <a class="nav-link" data-toggle="tooltip" data-placement="right" title="Surat Keterangan Berdomisili" href="<?=base_url('laporan/skb')?>">SKB</a></li>
+									<li class="nav-item"> <a class="nav-link" data-toggle="tooltip" data-placement="right" title="Surat Keterangan Kehilangan" href="<?=base_url('laporan/skh')?>">SKH</a></li>
+									<li class="nav-item"> <a class="nav-link" data-toggle="tooltip" data-placement="right" title="Surat Keterangan Kebenaran Nama" href="<?=base_url('laporan/skkn')?>">SKKN</a></li>
+									<li class="nav-item"> <a class="nav-link" data-toggle="tooltip" data-placement="right" title="Surat Keterangan Pindah Nikah" href="<?=base_url('laporan/skpn')?>">SKPN</a></li>
+									<li class="nav-item"> <a class="nav-link" data-toggle="tooltip" data-placement="right" title="Surat Keterangan Tanda Kependudukan" href="<?=base_url('laporan/sktk')?>">SKTK</a></li>
+									<li class="nav-item"> <a class="nav-link" data-toggle="tooltip" data-placement="right" title="Surat Keterangan Usaha" href="<?=base_url('laporan/sku')?>">SKU</a></li>
+									<li class="nav-item"> <a class="nav-link" data-toggle="tooltip" data-placement="right" title="Surat Pernyataan Belum Pernah Nikah" href="<?=base_url('laporan/spbpn')?>">SPBPN</a></li>
 								</ul>
 							</div>
 						</li>

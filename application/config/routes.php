@@ -67,6 +67,7 @@ $route['skck/tampil_disposisi']='SkckController/tampil_disposisi';
 $route['skck/tolak_skck']='SkckController/tolak_skck';
 $route['skck/simpan_skck/(:any)']='SkckController/simpan_skck/$1';
 $route['skck/setuju/(:any)']='SkckController/setujui_skck/$1';
+$route['laporan/skck']='SkckController/laporan';
 
 $route['ktps']='KtpsController/index';
 $route['ktps/buat']='KtpsController/buat';

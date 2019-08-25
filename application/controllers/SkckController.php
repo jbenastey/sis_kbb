@@ -31,6 +31,7 @@ class SkckController extends CI_Controller
 				$skck_nik = $this->input->post('nik');
 				$skck_keperluan = $this->input->post('keperluan');
 				$skck_alamat = $this->input->post('alamat');
+				$skck_tanggal = date('Y-m-d');
 				$data = array(
 					'skck_nomor' => $skck_nomor,
 					'skck_tanggal_lahir' => $skck_tanggal_lahir,
@@ -44,6 +45,7 @@ class SkckController extends CI_Controller
 					'skck_nik' => $skck_nik,
 					'skck_keperluan' => $skck_keperluan,
 					'skck_alamat' => $skck_alamat,
+					'skck_tanggal' => $skck_tanggal,
 				);
 				$simpan = $this->SuratModel->insert('dbsurat_skck',$data);
 				if ($simpan>0) {
@@ -132,5 +134,23 @@ class SkckController extends CI_Controller
 		$this->SuratModel->update('skck_id',$id,'dbsurat_skck',$data_disposisi);
 		$this->session->set_flashdata('alert','berhasil_menyetujui_surat');
 		redirect('skck');
+	}
+	public function laporan(){
+		if (isset($_POST['lihat'])){
+			$tanggal1 = $this->input->post('tanggal1');
+			$tanggal2 = $this->input->post('tanggal2');
+
+			$data['laporan'] = $this->SuratModel->view_laporan('dbsurat_skck','skck_tanggal',$tanggal1,$tanggal2);
+			$data['tanggal1'] = $tanggal1;
+			$data['tanggal2'] = $tanggal2;
+			$this->load->view('templates/header');
+			$this->load->view('skck/arsip',$data);
+			$this->load->view('templates/footer');
+		} else {
+			$this->load->view('templates/header');
+			$this->load->view('skck/laporan');
+			$this->load->view('templates/footer');
+		}
+
 	}
 }
