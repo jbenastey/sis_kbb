@@ -102,7 +102,7 @@
 										<td><?= $value['skck_wni'] ?></td>
 										<td><?= $value['skck_jk'] ?></td>
 										<td><?php
-											if ($value['skck_disposisi'] == null):
+											if ($value['skck_disposisi'] == 'Tunggu'):
 												?>
 												<div class="badge badge-warning">Tunggu</div>
 											<?php
@@ -113,18 +113,30 @@
 											endif
 											?>
 										</td>
-										<td><a href="<?=base_url('skck/lihat/'.$value['skck_id'])?>"
-											   class="btn btn-small btn-primary"
+										<td>
+											<a href="<?=base_url('skck/lihat/'.$value['skck_id'])?>"
+											   class="badge badge-primary"
 											   title="Lihat"><i
-													class="fa fa-eye"></i></a>
+													class="fa fa-eye"></i> Lihat</a><br>
+											<?php
+											if ($value['skck_disposisi'] == 'Tunggu'):
+											?>
 											<a href="<?= base_url('skck/edit/' . $value['skck_id']) ?>"
-											   class="btn btn-small btn-success" title="Edit"><i
-													class="fa fa-pencil"></i></a>
+											   class="badge badge-success" title="Edit"><i
+													class="fa fa-pencil"></i> Edit</a><br>
 											<a href="<?= base_url('skck/hapus/'.$value['skck_id']) ?>"
-											   class="btn btn-small btn-danger"
+											   class="badge badge-danger"
 											   onclick="return confirm('Apakah anda yakin ingin menghapus?')"
 											   title="Hapus"><i
-													class="fa fa-trash-o"></i></a></td>
+													class="fa fa-trash-o"></i> Hapus</a>
+											<?php
+											elseif ($value['skck_disposisi'] == 'Setuju'):
+												?>
+
+											<?php
+											endif
+											?>
+										</td>
 
 									</tr>
 									<?php
@@ -141,7 +153,7 @@
 											<td><?= $value['skck_wni'] ?></td>
 											<td><?= $value['skck_jk'] ?></td>
 											<td><?php
-												if ($value['skck_disposisi'] == null):
+												if ($value['skck_disposisi'] == 'Tunggu'):
 													?>
 													<div class="badge badge-warning">Tunggu</div>
 												<?php
@@ -153,17 +165,17 @@
 												?>
 											</td>
 											<td><a href="<?=base_url('skck/lihat/'.$value['skck_id'])?>"
-												   class="btn btn-small btn-primary"
+												   class="badge badge-primary"
 												   title="Lihat"><i
-														class="fa fa-eye"></i></a>
+														class="fa fa-eye"></i> Lihat</a>
 
 												<?php
 												if ($this->session->userdata('session_level') == 'Penghulu'):
-													if ($value['skck_disposisi'] == null):
+													if ($value['skck_disposisi'] == 'Tunggu'):
 														?>
 														<a href="<?= base_url('skck/setuju/' . $value['skck_id']) ?>"
-														   class="btn btn-small btn-success " title="Setuju">
-															<i class="fa fa-check"></i></a>
+														   class="badge badge-success " title="Setuju">
+															<i class="fa fa-check"></i> Setujui</a>
 													<?php
 													endif;
 												endif;

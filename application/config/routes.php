@@ -59,6 +59,7 @@ $route['skck']='SkckController/index';
 $route['skck/buat']='SkckController/buat';
 $route['skck/lihat/(:any)']='SkckController/lihat/$1';
 $route['skck/hapus/(:any)']='SkckController/hapus/$1';
+$route['skck/cetak/(:any)']='SkckController/cetak/$1';
 $route['skck/edit/(:any)']='SkckController/edit/$1';
 $route['skck/update/(:any)']='SkckController/update/$1';
 $route['skck/disposisi/(:any)']='SkckController/disposisi/$1';

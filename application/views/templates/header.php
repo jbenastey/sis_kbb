@@ -57,7 +57,7 @@
 <body class="sidebar-fixed">
 <div class="container-scroller">
 	<!-- partial:partials/_navbar.html -->
-	<nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+	<nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row d-print-none">
 		<div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
 			<a class="navbar-brand brand-logo" href="<?=base_url()?>"><img src="<?= base_url('assets/images/auth/logo.png') ?>"
 															 alt="logo" style="width: 20%"/></a>
@@ -118,7 +118,7 @@
 			</div>
 			<!-- partial -->
 			<!-- partial:partials/_sidebar.html -->
-			<nav class="sidebar sidebar-offcanvas" id="sidebar">
+			<nav class="sidebar sidebar-offcanvas  d-print-none" id="sidebar">
 				<ul class="nav">
 					<li class="nav-item nav-profile">
 						<div class="nav-link">

@@ -109,6 +109,16 @@ class SkckController extends CI_Controller
 		$this->load->view('skck/lihat', $data);
 		$this->load->view('templates/footer');
 	}
+	public function cetak($id){
+		$data = array(
+			'skck' => $this->SuratModel->view_data_by_id($id,'skck_id','dbsurat_skck'),
+			'skck_detail' => $this->SuratModel->view_data_skck_by_id($id)
+		);
+
+		$this->load->view('templates/header');
+		$this->load->view('skck/cetak', $data);
+		$this->load->view('templates/footer');
+	}
 	public function hapus($id){
 		$this->SuratModel->delete('skck_id',$id,'dbsurat_skck');
 		$this->session->set_flashdata('alert','berhasil_menghapus_skck');
