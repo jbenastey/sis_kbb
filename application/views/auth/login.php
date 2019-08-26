@@ -53,6 +53,11 @@
 								<div class="mt-5">
 									<button type="submit" class="btn btn-block btn-success btn-lg font-weight-medium " style="border-radius: 35px" name="login">Login</button>
 								</div>
+								<br>
+								<div class="mt-3">
+									<button type="button" class="btn btn-block btn-secondary btn-mini font-weight-medium " style="border-radius: 35px; font-size: 11px" name="lihat_syarat" data-toggle="modal"
+											data-target="#exampleModal">Lihat Persyaratan Pembuatan Surat</button>
+								</div>
 							</form>
 						</div>
 					</div>
@@ -63,6 +68,23 @@
 		<!-- row ends -->
 	</div>
 	<!-- page-body-wrapper ends -->
+</div>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+	 aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header" style="text-align: center">
+				<h5 class="modal-title" id="exampleModalLabel" >Persyaratan Pembuatan Surat</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div style="margin-left: 10px">
+		<p>1. Kartu Tanda Penduduk</p>
+		<p>2. Kartu Keluarga</p>
+		<p>3. Foto</p>
+		</div></div>
+	</div>
 </div>
 <!-- container-scroller -->
 <!-- plugins:js -->

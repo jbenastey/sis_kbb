@@ -44,11 +44,6 @@
 					<td><?=$sku['sku_kerja']?></td>
 				</tr>
 				<tr>
-					<td>Status</td>
-					<td> : </td>
-					<td><?=$sku['sku_status']?></td>
-				</tr>
-				<tr>
 					<td>NIK</td>
 					<td> : </td>
 					<td><?=$sku['sku_nik']?></td>
@@ -74,6 +69,17 @@
 					<td><?=$sku['sku_tanggal']?></td>
 				</tr>
 			</table>
+			<br>
+			<a href="<?=base_url('sku')?>" class="btn btn-secondary"><i class="fa fa-arrow-left"></i> Kembali</a>
+			<?php
+			if ($this->session->userdata('session_level') == 'Pegawai'):
+				if ($sku['sku_disposisi'] == 'Setuju'):
+					?>
+					<a href="<?=base_url('sku/cetak/'.$sku['sku_id'])?>" class="btn btn-primary"><i class="fa fa-print"></i> Cetak</a>
+				<?php
+				endif;
+			endif;
+			?>
 		</div>
 	</div>
 </div>

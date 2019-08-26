@@ -74,6 +74,17 @@
 					<td><?=$sktk['sktk_tanggal']?></td>
 				</tr>
 			</table>
+			<br>
+			<a href="<?=base_url('sktk')?>" class="btn btn-secondary"><i class="fa fa-arrow-left"></i> Kembali</a>
+			<?php
+			if ($this->session->userdata('session_level') == 'Pegawai'):
+				if ($sktk['sktk_disposisi'] == 'Setuju'):
+					?>
+					<a href="<?=base_url('sktk/cetak/'.$sktk['sktk_id'])?>" class="btn btn-primary"><i class="fa fa-print"></i> Cetak</a>
+				<?php
+				endif;
+			endif;
+			?>
 		</div>
 	</div>
 </div>

@@ -129,4 +129,14 @@ class SkuController extends CI_Controller
 		$this->session->set_flashdata('alert','berhasil_menyetujui_surat');
 		redirect('sku');
 	}
+	public function cetak($id){
+		$data = array(
+			'sku' => $this->SuratModel->view_data_by_id($id,'sku_id','dbsurat_sku'),
+			'sku_detail' => $this->SuratModel->view_data_skck_by_id($id)
+		);
+
+		$this->load->view('templates/header');
+		$this->load->view('sku/cetak', $data);
+		$this->load->view('templates/footer');
+	}
 }

@@ -83,6 +83,7 @@
 								<th>Tempat Lahir</th>
 								<th>Kewarganegaraan</th>
 								<th>Jenis Kelamin</th>
+								<th>Status Surat</th>
 								<th>Aksi</th>
 							</tr>
 							</thead>
@@ -90,7 +91,7 @@
 							<?php
 							$no = 1;
 							foreach ($ktps as $key => $value):
-								if ($this->session->userdata('session_level') == 'Pegawai' || $this->session->userdata('session_level') == 'Penghulu'):
+								if ($this->session->userdata('session_level') == 'Pegawai'):
 									?>
 									<tr>
 										<td><?= $no ?></td>
@@ -100,24 +101,35 @@
 										<td><?= $value['ktps_tempat_lahir'] ?></td>
 										<td><?= $value['ktps_wni'] ?></td>
 										<td><?= $value['ktps_jk'] ?></td>
+										<td><?= $value['ktps_disposisi'] ?></td>
 										<td><a href="<?=base_url('ktps/lihat/'.$value['ktps_id'])?>"
-											   class="btn btn-small btn-primary"
+											   class="badge badge-primary"
 											   title="Lihat"><i
-													class="fa fa-eye"></i></a>
+													class="fa fa-eye"></i> Lihat</a><br>
+											<?php
+											if ($value['ktps_disposisi'] == null):
+											?>
 											<a href="<?= base_url('ktps/edit/' . $value['ktps_id']) ?>"
-											   class="btn btn-small btn-success" title="Edit"><i
-													class="fa fa-pencil"></i></a>
+											   class="badge badge-success" title="Edit"><i
+													class="fa fa-pencil"></i> Edit</a><br>
 											<a href="<?= base_url('ktps/hapus/'.$value['ktps_id']) ?>"
-											   class="btn btn-small btn-danger"
+											   class="badge badge-danger"
 											   onclick="return confirm('Apakah anda yakin ingin menghapus?')"
 											   title="Hapus"><i
-													class="fa fa-trash-o"></i></a>
+													class="fa fa-trash-o"></i>Delete </a>
+											<?php
+											elseif ($value['ktps_disposisi'] == 'Setuju'):
+												?>
+
+											<?php
+											endif
+											?>
 										</td>
 									</tr>
 									<?php
 									$no++;
 								else:
-									if ($this->session->userdata('session_level') == $value['surat_tujuan_disposisi']):
+									if ($this->session->userdata('session_level') == 'Penghulu'):
 										?>
 										<tr>
 											<td><?= $no ?></td>
@@ -127,7 +139,35 @@
 											<td><?= $value['ktps_tempat_lahir'] ?></td>
 											<td><?= $value['ktps_wni'] ?></td>
 											<td><?= $value['ktps_jk'] ?></td>
-											<td></td>
+											<td><?php
+												if ($value['ktps_disposisi'] == null):
+													?>
+													<div class="badge badge-warning">Tunggu</div>
+												<?php
+												elseif ($value['ktps_disposisi'] == 'Setuju'):
+													?>
+													<div class="badge badge-success">Setuju</div>
+												<?php
+												endif
+												?>
+											</td>
+											<td><a href="<?=base_url('ktps/lihat/'.$value['ktps_id'])?>"
+												   class="btn btn-small btn-primary"
+												   title="Lihat"><i
+														class="fa fa-eye"></i></a>
+
+												<?php
+												if ($this->session->userdata('session_level') == 'Penghulu'):
+													if ($value['ktps_disposisi'] == null):
+														?>
+														<a href="<?= base_url('ktps/setuju/' . $value['ktps_id']) ?>"
+														   class="btn btn-small btn-success " title="Setuju">
+															<i class="fa fa-check"></i></a>
+													<?php
+													endif;
+												endif;
+												?>
+											</td>
 										</tr>
 										<?php
 

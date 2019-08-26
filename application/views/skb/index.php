@@ -118,6 +118,9 @@
 											   class="btn btn-small btn-primary"
 											   title="Lihat"><i
 													class="fa fa-eye"></i></a>
+											<?php
+											if ($value['skb_disposisi'] == null):
+											?>
 											<a href="<?= base_url('skb/edit/' . $value['skb_id']) ?>"
 											   class="btn btn-small btn-success" title="Edit"><i
 													class="fa fa-pencil"></i></a>
@@ -126,6 +129,9 @@
 											   onclick="return confirm('Apakah anda yakin ingin menghapus?')"
 											   title="Hapus"><i
 													class="fa fa-trash-o"></i></a></tr>
+											<?php
+											endif
+									?>
 									<?php
 									$no++;
 								else:

@@ -163,4 +163,15 @@ class SkbController extends CI_Controller
 		$this->session->set_flashdata('alert','berhasil_menyetujui_surat');
 		redirect('skb');
 	}
+
+	public function cetak($id){
+		$data = array(
+			'skb' => $this->SuratModel->view_data_by_id($id,'skb_id','dbsurat_skb'),
+			'skb_detail' => $this->SuratModel->view_data_skb_by_id($id)
+		);
+
+		$this->load->view('templates/header');
+		$this->load->view('skb/cetak', $data);
+		$this->load->view('templates/footer');
+	}
 }

@@ -56,7 +56,7 @@ $bulan = array('', 'Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli
 		<div class="card-header  d-print-none">
 
 			<div class="col-12">
-				<a class="btn btn-secondary btn-sm" href="<?=base_url('skck/lihat/'.$skck['skck_id'])?>"><i class="fa fa-arrow-left"></i></a>
+				<a class="btn btn-secondary btn-sm" href="<?=base_url('skpn/lihat/'.$skpn['skpn_id'])?>"><i class="fa fa-arrow-left"></i></a>
 				<button onclick="window.print()" class="btn btn-primary btn-sm" style="float: right"><i class="fa fa-print"></i></button>
 			</div>
 
@@ -80,7 +80,7 @@ $bulan = array('', 'Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli
 						<tr>
 							<td><p>Nomor</p></td>
 							<td style="padding-left:2em"><p>:</p></td>
-							<td><p><?=$skck['skck_nomor']?></p></td>
+							<td><p><?=$skpn['skpn_nomor']?></p></td>
 						</tr>
 						<tr>
 							<td><p>Lamp</p></td>
@@ -90,7 +90,7 @@ $bulan = array('', 'Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli
 						<tr>
 							<td><p>Hal</p></td>
 							<td style="padding-left:2em"><p>:</p></td>
-							<td><p><b>Pengantar Permohonan Surat Keterangan Berkelakuan Baik (SKCK)</b></p></td>
+							<td><p><b>Pengantar Pindah Nikah</b></p></td>
 						</tr>
 					</table>
 				</div>
@@ -103,9 +103,9 @@ $bulan = array('', 'Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli
 			<div class="row mt-2" style="margin-left: 10%;">
 				<div class="col-6 ml-9">
 					<p>Kepada: </p>
-					<p>Yth. BAPAK KAPOLRES</p>
+					<p>Yth. Bapak KUA Bangko Pusako</p>
 					<p>di.</p>
-					<p><span class="ml-5"></span><b><u>Ujung Tanjung</u></b></p>
+					<p><span class="ml-5"></span><b><u>Bangko Kanan</u></b></p>
 				</div>
 			</div>
 
@@ -121,64 +121,59 @@ $bulan = array('', 'Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli
 					<tr>
 						<td><p>Nama Lengkap</p></td>
 						<td><p>:</p></td>
-						<td><p><?=$skck['skck_nama']?></p></td>
+						<td><p><?=$skpn['skpn_nama']?></p></td>
 					</tr>
 					<tr>
 						<td><p>Tempat/Tgl lahir</p></td>
 						<td><p>:</p></td>
-						<td><p><?=$skck['skck_tempat_lahir']?>, <?=$skck['skck_tanggal_lahir']?></p></td>
+						<td><p><?=$skpn['skpn_tempat_lahir']?>, <?=$skpn['skpn_tanggal_lahir']?></p></td>
 					</tr>
 					<tr>
 						<td><p>Warganegara</p></td>
 						<td><p>:</p></td>
-						<td><p><?=$skck['skck_wni']?></p></td>
+						<td><p><?=$skpn['skpn_wni']?></p></td>
 					</tr>
 					<tr>
 						<td><p>Agama</p></td>
 						<td><p>:</p></td>
-						<td><p><?=$skck['skck_agama']?></p></td>
+						<td><p><?=$skpn['skpn_agama']?></p></td>
 					</tr>
 					<tr>
 						<td><p>Jenis Kelamin</p></td>
 						<td><p>:</p></td>
-						<td><p><?=$skck['skck_jk']?></p></td>
+						<td><p><?=$skpn['skpn_jk']?></p></td>
 					</tr>
 					<tr>
 						<td><p>Status Perkawinan</p></td>
 						<td><p>:</p></td>
-						<td><p><?=$skck['skck_status']?></p></td>
+						<td><p><?=$skpn['skpn_status']?></p></td>
 					</tr>
 					<tr>
 						<td><p>Pekerjaan</p></td>
 						<td><p>:</p></td>
-						<td><p><?=$skck['skck_kerja']?></p></td>
+						<td><p><?=$skpn['skpn_kerja']?></p></td>
 					</tr>
 					<tr>
 						<td><p>No. NIK KTP</p></td>
 						<td><p>:</p></td>
-						<td><p><?=$skck['skck_nik']?></p></td>
-					</tr>
-					<tr>
-						<td><p>Keperluan</p></td>
-						<td><p>:</p></td>
-						<td><p><b><?=$skck['skck_keperluan']?></b></p></td>
+						<td><p><?=$skpn['skpn_nik']?></p></td>
 					</tr>
 					<tr>
 						<td><p>Alamat</p></td>
 						<td><p>:</p></td>
-						<td><p><?=$skck['skck_alamat']?></p></td>
+						<td><p><?=$skpn['skpn_alamat']?></p></td>
 					</tr>
 				</table>
 			</div>
 
 			<div class="row mt-3" style="margin-left: 10%;">
 				<div class="col-10 ml-10">
-					<p class="text-justify"><span class="ml-5"></span>Nama tersebut diatas adalah benar penduduk kami yang tinggal di <?=$skck['skck_alamat']?>. Dan menurut sepengetahuan kami selama nama tersebut berdomisili di Kepenghuluan Bangko Bakti <b><u>Berkelakuan Baik dan Tidak Pernah Terlibat Tindak Pidana Kejahatan.</u></b></p>
+					<p class="text-justify"><span class="ml-5"></span>Nama tersebut diatas adalah benar penduduk kami yang tinggal di <?=$skpn['skpn_alamat']?>. Dan menurut sepengetahuan kami selama nama tersebut berdomisili di Kepenghuluan Bangko Bakti .</u></b>Dan benar menurut sepengetahuan kami akan melaksanakan <b><u>Pindah Nikah (Ijab Kabul)</u></b>di Desa Buatan II, Kec. Koto Gasib, Kab. Siak</p>
 				</div>
 			</div>
 			<div class="row" style="margin-left: 10%;">
 				<div class="col-10 ml-10">
-					<p class="text-justify"><span class="ml-5"></span>Demikianlah surat keterangan ini diberikan kepada yang bersangkutan untuk dapat di pergunakan sebagaimana perlunya. </p>
+					<p class="text-justify"><span class="ml-5">Demikian surat keterangan ini kami berikan kepada yang bersangkutan untuk dapat digunakan sebagaimana perlu.</span></p>
 				</div>
 			</div>
 			<br>

@@ -121,4 +121,14 @@ class SkpnController extends CI_Controller
 		$this->session->set_flashdata('alert','berhasil_menyetujui_surat');
 		redirect('skpn');
 	}
+	public function cetak($id){
+		$data = array(
+			'skpn' => $this->SuratModel->view_data_by_id($id,'skpn_id','dbsurat_skpn'),
+			'skpn_detail' => $this->SuratModel->view_data_skck_by_id($id)
+		);
+
+		$this->load->view('templates/header');
+		$this->load->view('skpn/cetak', $data);
+		$this->load->view('templates/footer');
+	}
 }

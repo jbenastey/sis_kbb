@@ -56,7 +56,7 @@ $bulan = array('', 'Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli
 		<div class="card-header  d-print-none">
 
 			<div class="col-12">
-				<a class="btn btn-secondary btn-sm" href="<?=base_url('skck/lihat/'.$skck['skck_id'])?>"><i class="fa fa-arrow-left"></i></a>
+				<a class="btn btn-secondary btn-sm" href="<?=base_url('ppak/lihat/'.$ppak['ppak_id'])?>"><i class="fa fa-arrow-left"></i></a>
 				<button onclick="window.print()" class="btn btn-primary btn-sm" style="float: right"><i class="fa fa-print"></i></button>
 			</div>
 
@@ -74,38 +74,11 @@ $bulan = array('', 'Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli
 				</div>
 				<hr style="z-index: 999; margin-top: 0;width: 100%;border:2px solid black;background-color: black; ">
 			</div>
-			<div class="row" style="margin-top:-10px;margin-left: 20px;">
-				<div class="col-6 ml-9">
-					<table>
-						<tr>
-							<td><p>Nomor</p></td>
-							<td style="padding-left:2em"><p>:</p></td>
-							<td><p><?=$skck['skck_nomor']?></p></td>
-						</tr>
-						<tr>
-							<td><p>Lamp</p></td>
-							<td style="padding-left:2em"><p>:</p></td>
-							<td><p>-</p></td>
-						</tr>
-						<tr>
-							<td><p>Hal</p></td>
-							<td style="padding-left:2em"><p>:</p></td>
-							<td><p><b>Pengantar Permohonan Surat Keterangan Berkelakuan Baik (SKCK)</b></p></td>
-						</tr>
-					</table>
-				</div>
-				<div class="col-6 float-right text-right" style="padding-right: 140px;">
-					<p>Bangko Bakti, <?php echo date("d") ?> <?php echo $bulan[date("n")] ?> <?php echo date("Y") ?></p>
 
-				</div>
-			</div>
-
-			<div class="row mt-2" style="margin-left: 10%;">
-				<div class="col-6 ml-9">
-					<p>Kepada: </p>
-					<p>Yth. BAPAK KAPOLRES</p>
-					<p>di.</p>
-					<p><span class="ml-5"></span><b><u>Ujung Tanjung</u></b></p>
+			<div class="row mt-2" style="margin-left: 0%;">
+				<div class="col-12 ml-12">
+					<h4 class="text-center">SURAT KETERANGAN KTP SEMENTARA</h4>
+					<p class="text-center">No : <?=$ppak['ppak_nomor']?></p>
 				</div>
 			</div>
 
@@ -113,7 +86,7 @@ $bulan = array('', 'Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli
 				<div class="col-9 ml-9">
 					<p><b>Dengan Hormat</b></p>
 					<p><span class="ml-5"></span>Penghulu Bangko Sakti, Kecamatan Bangko Pusako, Kabupaten Rokan Hilir, Provinsi Riau.</p>
-					<p>Dengan ini menyatakan bahwa :</p>
+					<p>Dengan ini menerangkan bahwa :</p>
 				</div>
 			</div>
 			<div class="row mt-2" style="margin-left: 20%">
@@ -121,59 +94,54 @@ $bulan = array('', 'Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli
 					<tr>
 						<td><p>Nama Lengkap</p></td>
 						<td><p>:</p></td>
-						<td><p><?=$skck['skck_nama']?></p></td>
+						<td><p><?=$ppak['ppak_nama']?></p></td>
 					</tr>
 					<tr>
 						<td><p>Tempat/Tgl lahir</p></td>
 						<td><p>:</p></td>
-						<td><p><?=$skck['skck_tempat_lahir']?>, <?=$skck['skck_tanggal_lahir']?></p></td>
+						<td><p><?=$ppak['ppak_tempat_lahir']?>, <?=$ppak['ppak_tanggal_lahir']?></p></td>
 					</tr>
 					<tr>
 						<td><p>Warganegara</p></td>
 						<td><p>:</p></td>
-						<td><p><?=$skck['skck_wni']?></p></td>
+						<td><p><?=$ppak['ppak_wni']?></p></td>
 					</tr>
 					<tr>
 						<td><p>Agama</p></td>
 						<td><p>:</p></td>
-						<td><p><?=$skck['skck_agama']?></p></td>
+						<td><p><?=$ppak['ppak_agama']?></p></td>
 					</tr>
 					<tr>
 						<td><p>Jenis Kelamin</p></td>
 						<td><p>:</p></td>
-						<td><p><?=$skck['skck_jk']?></p></td>
+						<td><p><?=$ppak['ppak_jk']?></p></td>
 					</tr>
 					<tr>
 						<td><p>Status Perkawinan</p></td>
 						<td><p>:</p></td>
-						<td><p><?=$skck['skck_status']?></p></td>
+						<td><p><?=$ppak['ppak_status']?></p></td>
 					</tr>
 					<tr>
 						<td><p>Pekerjaan</p></td>
 						<td><p>:</p></td>
-						<td><p><?=$skck['skck_kerja']?></p></td>
+						<td><p><?=$ppak['ppak_kerja']?></p></td>
 					</tr>
 					<tr>
 						<td><p>No. NIK KTP</p></td>
 						<td><p>:</p></td>
-						<td><p><?=$skck['skck_nik']?></p></td>
-					</tr>
-					<tr>
-						<td><p>Keperluan</p></td>
-						<td><p>:</p></td>
-						<td><p><b><?=$skck['skck_keperluan']?></b></p></td>
+						<td><p><?=$ppak['ppak_nik']?></p></td>
 					</tr>
 					<tr>
 						<td><p>Alamat</p></td>
 						<td><p>:</p></td>
-						<td><p><?=$skck['skck_alamat']?></p></td>
+						<td><p><?=$ppak['ppak_alamat']?></p></td>
 					</tr>
 				</table>
 			</div>
 
 			<div class="row mt-3" style="margin-left: 10%;">
 				<div class="col-10 ml-10">
-					<p class="text-justify"><span class="ml-5"></span>Nama tersebut diatas adalah benar penduduk kami yang tinggal di <?=$skck['skck_alamat']?>. Dan menurut sepengetahuan kami selama nama tersebut berdomisili di Kepenghuluan Bangko Bakti <b><u>Berkelakuan Baik dan Tidak Pernah Terlibat Tindak Pidana Kejahatan.</u></b></p>
+					<p class="text-justify"><span class="ml-5"></span>Nama tersebut di atas adalah benar penduduk kami yang tinggal di <?=$ppak['ppak_alamat']?>, surat keterangan ini kami berikan sebagai <b><u>Kartu Tanda Penduduk Sementara</u></b>. Surat keterangan ini berlaku satu bulan sejak tanggal pengeluarannya . Dan berakhir pada tanggal.............................</u></b></p>
 				</div>
 			</div>
 			<div class="row" style="margin-left: 10%;">
@@ -193,8 +161,7 @@ $bulan = array('', 'Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli
 						<p style="margin-left: -100px;margin-bottom:-6px;" class="text-center"><b>PENGHULU BANGKO BAKTI</b></p>
 						<p style="margin-left: -100px;margin-bottom:-6px;" class="text-center"><b>KECAMATAN BANGKO PUSAKO</b></p>
 						<br><br>
-						<p style="margin-left: -100px;" class="text-center"><b>HUSNI TAMRIN, S.Ap</b></p>
-						<p style="margin-left: -100px;" class="text-center"><b>NIP.19740923 200906 1 002</b></p>
+						<p style="margin-left: -100px;" class="text-center"><b>SYAHNAN LUBIS</b></p>
 					</div>
 
 				</div>

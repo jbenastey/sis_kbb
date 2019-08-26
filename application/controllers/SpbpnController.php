@@ -109,5 +109,15 @@ class SpbpnController extends CI_Controller
 		$this->session->set_flashdata('alert','berhasil_menyetujui_surat');
 		redirect('spbpn');
 	}
+	public function cetak($id){
+		$data = array(
+			'spbpn' => $this->SuratModel->view_data_by_id($id,'spbpn_id','dbsurat_spbpn'),
+			'spbpn_detail' => $this->SuratModel->view_data_skck_by_id($id)
+		);
+
+		$this->load->view('templates/header');
+		$this->load->view('spbpn/cetak', $data);
+		$this->load->view('templates/footer');
+	}
 
 }

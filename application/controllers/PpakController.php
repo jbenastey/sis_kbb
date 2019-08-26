@@ -165,4 +165,15 @@ class PPakController extends CI_Controller
 		$this->session->set_flashdata('alert','berhasil_menyetujui_surat');
 		redirect('ppak');
 	}
+
+	public function cetak($id){
+		$data = array(
+			'ppak' => $this->SuratModel->view_data_by_id($id,'ppak_id','dbsurat_ppak'),
+			'ppak_detail' => $this->SuratModel->view_data_skck_by_id($id)
+		);
+
+		$this->load->view('templates/header');
+		$this->load->view('ppak/cetak', $data);
+		$this->load->view('templates/footer');
+	}
 }

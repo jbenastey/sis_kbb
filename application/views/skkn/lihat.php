@@ -64,6 +64,17 @@
 					<td><?=$skkn['skkn_tanggal']?></td>
 				</tr>
 			</table>
+			<br>
+			<a href="<?=base_url('skkn')?>" class="btn btn-secondary"><i class="fa fa-arrow-left"></i> Kembali</a>
+			<?php
+			if ($this->session->userdata('session_level') == 'Pegawai'):
+				if ($skkn['skkn_disposisi'] == 'Setuju'):
+					?>
+					<a href="<?=base_url('skkn/cetak/'.$skkn['skkn_id'])?>" class="btn btn-primary"><i class="fa fa-print"></i> Cetak</a>
+				<?php
+				endif;
+			endif;
+			?>
 		</div>
 	</div>
 </div>

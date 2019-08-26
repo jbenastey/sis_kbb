@@ -117,6 +117,9 @@
 											   class="btn btn-small btn-primary"
 											   title="Lihat"><i
 													class="fa fa-eye"></i></a>
+											<?php
+											if ($value['skh_disposisi'] == null):
+											?>
 											<a href="<?= base_url('skh/edit/' . $value['skh_id']) ?>"
 											   class="btn btn-small btn-success" title="Edit"><i
 													class="fa fa-pencil"></i></a>
@@ -124,7 +127,11 @@
 											   class="btn btn-small btn-danger"
 											   onclick="return confirm('Apakah anda yakin ingin menghapus?')"
 											   title="Hapus"><i
-													class="fa fa-trash-o"></i></a></tr>
+													class="fa fa-trash-o"></i></a>
+											<?php
+											endif
+											?>
+									</tr>
 									<?php
 									$no++;
 								else:

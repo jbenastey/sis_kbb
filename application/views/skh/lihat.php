@@ -64,6 +64,17 @@
 					<td><?=$skh['skh_tanggal']?></td>
 				</tr>
 			</table>
+			<br>
+			<a href="<?=base_url('skh')?>" class="btn btn-secondary"><i class="fa fa-arrow-left"></i> Kembali</a>
+			<?php
+			if ($this->session->userdata('session_level') == 'Pegawai'):
+				if ($skh['skh_disposisi'] == 'Setuju'):
+					?>
+					<a href="<?=base_url('skh/cetak/'.$skh['skh_id'])?>" class="btn btn-primary"><i class="fa fa-print"></i> Cetak</a>
+				<?php
+				endif;
+			endif;
+			?>
 		</div>
 	</div>
 </div>

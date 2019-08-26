@@ -129,4 +129,14 @@ class SktkController extends CI_Controller
 		$this->session->set_flashdata('alert','berhasil_menyetujui_surat');
 		redirect('sktk');
 	}
+	public function cetak($id){
+		$data = array(
+			'sktk' => $this->SuratModel->view_data_by_id($id,'sktk_id','dbsurat_sktk'),
+			'sktk_detail' => $this->SuratModel->view_data_skck_by_id($id)
+		);
+
+		$this->load->view('templates/header');
+		$this->load->view('sktk/cetak', $data);
+		$this->load->view('templates/footer');
+	}
 }
