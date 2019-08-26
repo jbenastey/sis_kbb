@@ -116,18 +116,18 @@
 										<td><a href="<?=base_url('skpn/lihat/'.$value['skpn_id'])?>"
 											   class="btn btn-small btn-primary"
 											   title="Lihat"><i
-													class="fa fa-eye"></i></a>
+													class="fa fa-eye"></i>Lihat</a>
 											<?php
 											if ($value['skpn_disposisi'] == null):
 											?>
 											<a href="<?= base_url('skpn/edit/' . $value['skpn_id']) ?>"
 											   class="btn btn-small btn-success" title="Edit"><i
-													class="fa fa-pencil"></i></a>
+													class="fa fa-pencil"></i>Edit</a>
 											<a href="<?= base_url('skpn/hapus/'.$value['skpn_id']) ?>"
 											   class="btn btn-small btn-danger"
 											   onclick="return confirm('Apakah anda yakin ingin menghapus?')"
 											   title="Hapus"><i
-													class="fa fa-trash-o"></i></a>
+													class="fa fa-trash-o"></i>Delete</a>
 											<?php
 											endif
 											?>
@@ -160,7 +160,7 @@
 											<td><a href="<?=base_url('skpn/lihat/'.$value['skpn_id'])?>"
 												   class="btn btn-small btn-primary"
 												   title="Lihat"><i
-														class="fa fa-eye"></i></a>
+														class="fa fa-eye"></i>Lihat</a>
 
 												<?php
 												if ($this->session->userdata('session_level') == 'Penghulu'):
@@ -168,7 +168,7 @@
 														?>
 														<a href="<?= base_url('skpn/setuju/' . $value['skpn_id']) ?>"
 														   class="btn btn-small btn-success " title="Setuju">
-															<i class="fa fa-check"></i></a>
+															<i class="fa fa-check"></i>Setuju</a>
 													<?php
 													endif;
 												endif;

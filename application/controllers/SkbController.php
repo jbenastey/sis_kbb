@@ -174,4 +174,22 @@ class SkbController extends CI_Controller
 		$this->load->view('skb/cetak', $data);
 		$this->load->view('templates/footer');
 	}
+	public function laporan(){
+		if (isset($_POST['lihat'])){
+			$tanggal1 = $this->input->post('tanggal1');
+			$tanggal2 = $this->input->post('tanggal2');
+
+			$data['laporan'] = $this->SuratModel->view_laporan('dbsurat_skb','skb_tanggal',$tanggal1,$tanggal2);
+			$data['tanggal1'] = $tanggal1;
+			$data['tanggal2'] = $tanggal2;
+			$this->load->view('templates/header');
+			$this->load->view('skb/arsip',$data);
+			$this->load->view('templates/footer');
+		} else {
+			$this->load->view('templates/header');
+			$this->load->view('skb/laporan');
+			$this->load->view('templates/footer');
+		}
+
+	}
 }

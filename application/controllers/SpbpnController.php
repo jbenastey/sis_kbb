@@ -112,12 +112,30 @@ class SpbpnController extends CI_Controller
 	public function cetak($id){
 		$data = array(
 			'spbpn' => $this->SuratModel->view_data_by_id($id,'spbpn_id','dbsurat_spbpn'),
-			'spbpn_detail' => $this->SuratModel->view_data_skck_by_id($id)
+			'spbpn_detail' => $this->SuratModel->view_data_spbpn_by_id($id)
 		);
 
 		$this->load->view('templates/header');
 		$this->load->view('spbpn/cetak', $data);
 		$this->load->view('templates/footer');
+	}
+	public function laporan(){
+		if (isset($_POST['lihat'])){
+			$tanggal1 = $this->input->post('tanggal1');
+			$tanggal2 = $this->input->post('tanggal2');
+
+			$data['laporan'] = $this->SuratModel->view_laporan('dbsurat_spbpn','spbpn_tanggal',$tanggal1,$tanggal2);
+			$data['tanggal1'] = $tanggal1;
+			$data['tanggal2'] = $tanggal2;
+			$this->load->view('templates/header');
+			$this->load->view('spbpn/arsip',$data);
+			$this->load->view('templates/footer');
+		} else {
+			$this->load->view('templates/header');
+			$this->load->view('spbpn/laporan');
+			$this->load->view('templates/footer');
+		}
+
 	}
 
 }

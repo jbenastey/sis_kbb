@@ -171,4 +171,9 @@ class SuratModel extends CI_Model
 		$query = "select * from $table where $column between '$date1' and '$date2'";
 		return $this->db->query($query)->result_array();
 	}
+	public function total_setuju($table,$column){
+		$this->db->where($column, 'Setuju');
+		return $this->db->get($table)->result_array();
+	}
+
 }

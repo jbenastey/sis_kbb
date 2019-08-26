@@ -169,11 +169,29 @@ class PPakController extends CI_Controller
 	public function cetak($id){
 		$data = array(
 			'ppak' => $this->SuratModel->view_data_by_id($id,'ppak_id','dbsurat_ppak'),
-			'ppak_detail' => $this->SuratModel->view_data_skck_by_id($id)
+			'ppak_detail' => $this->SuratModel->view_data_ppak_by_id($id)
 		);
 
 		$this->load->view('templates/header');
 		$this->load->view('ppak/cetak', $data);
 		$this->load->view('templates/footer');
+	}
+	public function laporan(){
+		if (isset($_POST['lihat'])){
+			$tanggal1 = $this->input->post('tanggal1');
+			$tanggal2 = $this->input->post('tanggal2');
+
+			$data['laporan'] = $this->SuratModel->view_laporan('dbsurat_ppak','ppak_tanggal',$tanggal1,$tanggal2);
+			$data['tanggal1'] = $tanggal1;
+			$data['tanggal2'] = $tanggal2;
+			$this->load->view('templates/header');
+			$this->load->view('ppak/arsip',$data);
+			$this->load->view('templates/footer');
+		} else {
+			$this->load->view('templates/header');
+			$this->load->view('ppak/laporan');
+			$this->load->view('templates/footer');
+		}
+
 	}
 }

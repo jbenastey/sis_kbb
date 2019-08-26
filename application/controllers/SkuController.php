@@ -132,11 +132,29 @@ class SkuController extends CI_Controller
 	public function cetak($id){
 		$data = array(
 			'sku' => $this->SuratModel->view_data_by_id($id,'sku_id','dbsurat_sku'),
-			'sku_detail' => $this->SuratModel->view_data_skck_by_id($id)
+			'sku_detail' => $this->SuratModel->view_data_sku_by_id($id)
 		);
 
 		$this->load->view('templates/header');
 		$this->load->view('sku/cetak', $data);
 		$this->load->view('templates/footer');
+	}
+	public function laporan(){
+		if (isset($_POST['lihat'])){
+			$tanggal1 = $this->input->post('tanggal1');
+			$tanggal2 = $this->input->post('tanggal2');
+
+			$data['laporan'] = $this->SuratModel->view_laporan('dbsurat_sku','sku_tanggal',$tanggal1,$tanggal2);
+			$data['tanggal1'] = $tanggal1;
+			$data['tanggal2'] = $tanggal2;
+			$this->load->view('templates/header');
+			$this->load->view('sku/arsip',$data);
+			$this->load->view('templates/footer');
+		} else {
+			$this->load->view('templates/header');
+			$this->load->view('sku/laporan');
+			$this->load->view('templates/footer');
+		}
+
 	}
 }

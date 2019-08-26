@@ -154,7 +154,7 @@
 											<td><a href="<?=base_url('ktps/lihat/'.$value['ktps_id'])?>"
 												   class="btn btn-small btn-primary"
 												   title="Lihat"><i
-														class="fa fa-eye"></i></a>
+														class="fa fa-eye"></i>Lihat</a>
 
 												<?php
 												if ($this->session->userdata('session_level') == 'Penghulu'):
@@ -162,7 +162,7 @@
 														?>
 														<a href="<?= base_url('ktps/setuju/' . $value['ktps_id']) ?>"
 														   class="btn btn-small btn-success " title="Setuju">
-															<i class="fa fa-check"></i></a>
+															<i class="fa fa-check"></i>Setuju</a>
 													<?php
 													endif;
 												endif;

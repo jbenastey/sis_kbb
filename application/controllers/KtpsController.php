@@ -105,7 +105,7 @@ class KtpsController extends CI_Controller
 			'ktps_alamat' => $ktps_alamat,
 		);
 //		$where = array(
-//			'skck_id' => $id
+//			'ktps_id' => $id
 //		);
 		$this->SuratModel->update('ktps_id',$id,'dbsurat_ktps',$data);
 
@@ -126,11 +126,29 @@ class KtpsController extends CI_Controller
 	public function cetak($id){
 		$data = array(
 			'ktps' => $this->SuratModel->view_data_by_id($id,'ktps_id','dbsurat_ktps'),
-			'ktps_detail' => $this->SuratModel->view_data_skck_by_id($id)
+			'ktps_detail' => $this->SuratModel->view_data_ktps_by_id($id)
 		);
 
 		$this->load->view('templates/header');
 		$this->load->view('ktps/cetak', $data);
 		$this->load->view('templates/footer');
+	}
+	public function laporan(){
+		if (isset($_POST['lihat'])){
+			$tanggal1 = $this->input->post('tanggal1');
+			$tanggal2 = $this->input->post('tanggal2');
+
+			$data['laporan'] = $this->SuratModel->view_laporan('dbsurat_ktps','ktps_tanggal',$tanggal1,$tanggal2);
+			$data['tanggal1'] = $tanggal1;
+			$data['tanggal2'] = $tanggal2;
+			$this->load->view('templates/header');
+			$this->load->view('ktps/arsip',$data);
+			$this->load->view('templates/footer');
+		} else {
+			$this->load->view('templates/header');
+			$this->load->view('ktps/laporan');
+			$this->load->view('templates/footer');
+		}
+
 	}
 }

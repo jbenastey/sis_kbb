@@ -82,6 +82,7 @@ $route['ktps/tampil_disposisi']='KtpsController/tampil_disposisi';
 $route['ktps/tolak_ktps']='KtpsController/tolak_ktps';
 $route['ktps/simpan_ktps/(:any)']='KtpsController/simpan_ktps/$1';
 $route['ktps/setuju/(:any)']='KtpsController/setujui_ktps/$1';
+$route['laporan/ktps']='KtpsController/laporan';
 
 $route['ppak']='PpakController/index';
 $route['ppak/buat']='PpakController/buat';
@@ -96,6 +97,7 @@ $route['ppak/tampil_disposisi']='PpakController/tampil_disposisi';
 $route['ppak/tolak_ppak']='PpakController/tolak_ppak';
 $route['ppak/simpan_ppak/(:any)']='PpakController/simpan_ppak/$1';
 $route['ppak/setuju/(:any)']='PpakController/setujui_ppak/$1';
+$route['laporan/ppak']='PpakController/laporan';
 
 $route['skb']='SkbController/index';
 $route['skb/buat']='SkbController/buat';
@@ -109,6 +111,7 @@ $route['skb/tampil_disposisi']='SkbController/tampil_disposisi';
 $route['skb/tolak_skb']='SkbController/tolak_skb';
 $route['skb/simpan_skb/(:any)']='SkbController/simpan_skb/$1';
 $route['skb/setuju/(:any)']='SkbController/setujui_skb/$1';
+$route['laporan/skb']='SkbController/laporan';
 
 $route['skh']='SkhController/index';
 $route['skh/buat']='SkhController/buat';
@@ -122,6 +125,7 @@ $route['skh/tampil_disposisi']='SkhController/tampil_disposisi';
 $route['skh/tolak_skh']='SkhController/tolak_skh';
 $route['skh/simpan_skh/(:any)']='SkhController/simpan_skh/$1';
 $route['skh/setuju/(:any)']='SkhController/setujui_skh/$1';
+$route['laporan/skh']='SkhController/laporan';
 
 $route['skkn']='SkknController/index';
 $route['skkn/buat']='SkknController/buat';
@@ -135,6 +139,7 @@ $route['skkn/tampil_disposisi']='SkknController/tampil_disposisi';
 $route['skkn/tolak_skkn']='SkknController/tolak_skkn';
 $route['skkn/simpan_skkn/(:any)']='SkknController/simpan_skkn/$1';
 $route['skkn/setuju/(:any)']='SkknController/setujui_skkn/$1';
+$route['laporan/skkn']='SkknController/laporan';
 
 $route['skpn']='SkpnController/index';
 $route['skpn/buat']='SkpnController/buat';
@@ -148,6 +153,7 @@ $route['skpn/tampil_disposisi']='SkpnController/tampil_disposisi';
 $route['skpn/tolak_skpn']='SkpnController/tolak_skpn';
 $route['skpn/simpan_skpn/(:any)']='SkpnController/simpan_skpn/$1';
 $route['skpn/setuju/(:any)']='SkpnController/setujui_skpn/$1';
+$route['laporan/skpn']='SkpnController/laporan';
 
 $route['sktk']='SktkController/index';
 $route['sktk/buat']='SktkController/buat';
@@ -161,6 +167,7 @@ $route['sktk/tampil_disposisi']='SktkController/tampil_disposisi';
 $route['sktk/tolak_sktk']='SktkController/tolak_sktk';
 $route['sktk/simpan_sktk/(:any)']='SktkController/simpan_sktk/$1';
 $route['sktk/setuju/(:any)']='SktkController/setujui_sktk/$1';
+$route['laporan/sktk']='SktkController/laporan';
 
 $route['sku']='SkuController/index';
 $route['sku/buat']='SkuController/buat';
@@ -174,6 +181,7 @@ $route['sku/tampil_disposisi']='SkuController/tampil_disposisi';
 $route['sku/tolak_sku']='SkuController/tolak_sku';
 $route['sku/simpan_sku/(:any)']='SkuController/simpan_sku/$1';
 $route['sku/setuju/(:any)']='SkuController/setujui_sku/$1';
+$route['laporan/sku']='SkuController/laporan';
 
 $route['spbpn']='SpbpnController/index';
 $route['spbpn/buat']='SpbpnController/buat';
@@ -187,6 +195,7 @@ $route['spbpn/tampil_disposisi']='SpbpnController/tampil_disposisi';
 $route['spbpn/tolak_spbpn']='SpbpnController/tolak_spbpn';
 $route['spbpn/simpan_spbpn/(:any)']='SpbpnController/simpan_spbpn/$1';
 $route['spbpn/setuju/(:any)']='spbpnController/setujui_spbpn/$1';
+$route['laporan/spbpn']='SpbpnController/laporan';
 
 $route['akun']='AkunController/index';
 $route['akun/hapus/(:any)']='AkunController/hapus/$1';

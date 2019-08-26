@@ -35,9 +35,9 @@
 					<div class="ml-3">
 						<p class="mb-0">Surat Masuk Disetujui</p>
 						<h6>
-<!--							--><?php
-//							echo $surat_setuju
-//							?>
+							<?php
+							echo $surat_setuju
+							?>
 						</h6>
 					</div>
 				</div>
@@ -48,13 +48,13 @@
 		<div class="card">
 			<div class="card-body">
 				<div class="d-flex align-items-center justify-content-md-center">
-					<i class="fa fa-times-rectangle icon-lg text-danger"></i>
+					<i class="fa fa-times-circle-o icon-lg text-dark"></i>
 					<div class="ml-3">
-						<p class="mb-0">Surat Masuk Ditolak</p>
+						<p class="mb-0">Surat Masuk Belum Disetujui</p>
 						<h6>
-<!--							--><?php
-//							echo $surat_ditolak
-//							?>
+							<?php
+							echo $surat_belum
+							?>
 						</h6>
 					</div>
 				</div>

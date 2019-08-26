@@ -124,12 +124,30 @@ class SkhController extends CI_Controller
 	public function cetak($id){
 		$data = array(
 			'skh' => $this->SuratModel->view_data_by_id($id,'skh_id','dbsurat_skh'),
-			'skh_detail' => $this->SuratModel->view_data_skck_by_id($id)
+			'skh_detail' => $this->SuratModel->view_data_skh_by_id($id)
 		);
 
 		$this->load->view('templates/header');
 		$this->load->view('skh/cetak', $data);
 		$this->load->view('templates/footer');
+	}
+	public function laporan(){
+		if (isset($_POST['lihat'])){
+			$tanggal1 = $this->input->post('tanggal1');
+			$tanggal2 = $this->input->post('tanggal2');
+
+			$data['laporan'] = $this->SuratModel->view_laporan('dbsurat_skh','skh_tanggal',$tanggal1,$tanggal2);
+			$data['tanggal1'] = $tanggal1;
+			$data['tanggal2'] = $tanggal2;
+			$this->load->view('templates/header');
+			$this->load->view('skh/arsip',$data);
+			$this->load->view('templates/footer');
+		} else {
+			$this->load->view('templates/header');
+			$this->load->view('skh/laporan');
+			$this->load->view('templates/footer');
+		}
+
 	}
 
 }
